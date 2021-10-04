@@ -1,16 +1,22 @@
-function checkingWhetherItIsAnagram(strouk1, strouk2) {
+function task1(strouk1, strouk2) {
   if (strouk1.length !== strouk2.length) return "не анаграмма";
   for (let i = 0; i < strouk1.length; i++) {
-    if (!test2(strouk1[i], strouk2)) return "не анаграмма";
+    if (
+      checkingLetter(strouk1[i], strouk1) !==
+      checkingLetter(strouk1[i], strouk2)
+    )
+      return "не анаграмма";
   }
   return "анаграмма";
 }
-
-function checkingLetterForOccurrence(letter, strouk2) {
-  for (let i = 0; i < strouk2.length; i++) {
-    if (strouk2[i].toLowerCase() === letter.toLowerCase()) return true;
+function checkingLetter(letter, strouk) {
+  let counter = 0;
+  for (let i = 0; i < strouk.length; i++) {
+    if (strouk[i] === letter) {
+      counter++;
+    }
   }
-  return false;
+  return counter;
 }
 
 // second
@@ -54,4 +60,36 @@ function set(number) {
     }
   }
   return arrayOfUniqueValues;
+}
+
+// task 3
+
+function task3(sentence) {
+  const arrayOfSentences = sentence.split(" ");
+  sliceComma(arrayOfSentences);
+  let counter = 0;
+  for (let i = 0; i < arrayOfSentences.length; i++) {
+    if (checking(arrayOfSentences[i], arrayOfSentences)) {
+      counter++;
+    }
+  }
+  console.log(counter);
+}
+
+function checking(element, arrayOfElements) {
+  let counter = 0;
+  for (let i = 0; i < arrayOfElements.length; i++) {
+    if (element === arrayOfElements[i]) {
+      if (++counter > 1) return false;
+    }
+  }
+  return true;
+}
+function sliceComma(arraySentences) {
+  for (let i = 0; i < arraySentences.length; i++) {
+    if (arraySentences[i].indexOf(",") !== -1) {
+      const index = arraySentences[i].indexOf(",");
+      arraySentences[i] = arraySentences[i].split("").splice(0, index).join("");
+    }
+  }
 }
