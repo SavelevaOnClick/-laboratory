@@ -258,3 +258,41 @@ function getSumPositiveNumbers(arrayOfNumbers) {
   return sum;
 }
 // task 9
+function getAmountElementsNegative(array) {
+  let counter = 0;
+  for (let i = 0; i < array.length; i++) {
+    array[i] < 0 && counter++;
+  }
+  return counter;
+}
+
+function getAmountElementsZero(array) {
+  let counter = 0;
+  for (let i = 0; i < array.length; i++) {
+    array[i] === 0 && counter++;
+  }
+  return counter;
+}
+
+function getAmountElementsPositive(array) {
+  let counter = 0;
+  for (let i = 0; i < array.length; i++) {
+    array[i] > 0 && counter++;
+  }
+  return counter;
+}
+function getAmountElementsPrime(array) {
+  function isPrimeNumber(number) {
+    if (number < 2 || !number) return false;
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0) return false;
+    }
+    return true;
+  }
+  let counter = 0;
+  for (let i = 0; i < array.length; i++) {
+    isPrimeNumber(array[i]) && counter++;
+  }
+  return counter;
+}
+// task10
