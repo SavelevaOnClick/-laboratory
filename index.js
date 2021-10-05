@@ -145,3 +145,19 @@ function sliceComma(array) {
     }
   }
 }
+// task5
+function getFibonacciSeries(n) {
+  let a = 0;
+  let b = 1;
+  let fibonacci;
+  const arrayFibonacci = [];
+  arrayFibonacci.push(a);
+  arrayFibonacci.push(b);
+  for (let i = 2; i < n; i++) {
+    fibonacci = a + b;
+    a = b;
+    b = fibonacci;
+    arrayFibonacci.push(fibonacci);
+  }
+  return arrayFibonacci;
+}
