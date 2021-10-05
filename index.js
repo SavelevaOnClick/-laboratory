@@ -1,13 +1,13 @@
 function task1(strouk1, strouk2) {
-  if (strouk1.length !== strouk2.length) return "не анаграмма";
+  if (strouk1.length !== strouk2.length) return false;
   for (let i = 0; i < strouk1.length; i++) {
     if (
       checkingLetter(strouk1[i], strouk1) !==
       checkingLetter(strouk1[i], strouk2)
     )
-      return "не анаграмма";
+      return false;
   }
-  return "анаграмма";
+  return true;
 }
 function checkingLetter(letter, strouk) {
   let counter = 0;
@@ -22,41 +22,41 @@ function checkingLetter(letter, strouk) {
 // second
 
 function secondTask(number) {
+  const resultObject = {};
   const stringNumber = String(number);
-  const arrayOfUniqueNumbers = set(number);
+  const arrayOfUniqueNumbers = sortingUniqueArray(stringNumber);
   for (let i = 0; i < arrayOfUniqueNumbers.length; i++) {
-    console.log(
-      `цифра ${
-        arrayOfUniqueNumbers[i]
-      } встречается в числе ${counterOfOccurrencesOfDigitsInAnumber(
+    Object.assign(resultObject, {
+      [arrayOfUniqueNumbers[i]]: getCounter(
         arrayOfUniqueNumbers[i],
         stringNumber
-      )}`
-    );
+      ),
+    });
   }
+  return resultObject;
 }
 
-function counterOfOccurrencesOfDigitsInAnumber(number, stringNumber) {
+function getCounter(numb, stringNumber) {
   let counter = 0;
   for (let i = 0; i < stringNumber.length; i++)
-    if (number === stringNumber[i]) {
+    if (numb === stringNumber[i]) {
       counter++;
     }
   return counter;
 }
-function checkingForBeingInAnArray(element, arrayElementsForChecking) {
-  if (arrayElementsForChecking.length === 0) return false;
-  for (let i = 0; i < arrayElementsForChecking.length; i++) {
-    if (element === arrayElementsForChecking[i]) return true;
+
+function checkingElement(element, array) {
+  if (array.length === 0) return false;
+  for (let i = 0; i < array.length; i++) {
+    if (element === array[i]) return true;
   }
   return false;
 }
-function set(number) {
-  const stringNumber = String(number);
+function sortingUniqueArray(number) {
   const arrayOfUniqueValues = [];
-  for (let i = 0; i < stringNumber.length; i++) {
-    if (!checkingForBeingInAnArray(stringNumber[i], arrayOfUniqueValues)) {
-      arrayOfUniqueValues.push(stringNumber[i]);
+  for (let i = 0; i < number.length; i++) {
+    if (!checkingElement(number[i], arrayOfUniqueValues)) {
+      arrayOfUniqueValues.push(number[i]);
     }
   }
   return arrayOfUniqueValues;
@@ -66,7 +66,7 @@ function set(number) {
 
 function task3(sentence) {
   const arrayOfSentences = sentence.split(" ");
-  sliceComma(arrayOfSentences);
+  checkingAndsliceComma(arrayOfSentences);
   let counter = 0;
   for (let i = 0; i < arrayOfSentences.length; i++) {
     if (checking(arrayOfSentences[i], arrayOfSentences)) {
@@ -85,11 +85,63 @@ function checking(element, arrayOfElements) {
   }
   return true;
 }
-function sliceComma(arraySentences) {
+function checkingAndsliceComma(arraySentences) {
   for (let i = 0; i < arraySentences.length; i++) {
     if (arraySentences[i].indexOf(",") !== -1) {
       const index = arraySentences[i].indexOf(",");
       arraySentences[i] = arraySentences[i].split("").splice(0, index).join("");
+    }
+  }
+}
+
+// task4
+function task3(sentence) {
+  const resultObject = {};
+  const arraySentences = sentence.split(" ");
+  sliceComma(arraySentences);
+  const arrayOfUniqueValues = sortingUniqueArray(arraySentences);
+  for (let i = 0; i < arrayOfUniqueValues.length; i++) {
+    Object.assign(resultObject, {
+      [arrayOfUniqueValues[i]]: getCounter(
+        arrayOfUniqueValues[i],
+        arraySentences
+      ),
+    });
+  }
+  return resultObject;
+}
+
+function getCounter(element, arrayOfElements) {
+  let counter = 0;
+  for (let i = 0; i < arrayOfElements.length; i++) {
+    if (element === arrayOfElements[i]) {
+      counter++;
+    }
+  }
+  return counter;
+}
+
+function sortingUniqueArray(array) {
+  const arrayOfUniqueValues = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!checkingElement(array[i], arrayOfUniqueValues)) {
+      arrayOfUniqueValues.push(array[i]);
+    }
+  }
+  return arrayOfUniqueValues;
+}
+
+function checkingElement(element, array) {
+  for (let i = 0; i < array.length; i++) {
+    if (element === array[i]) return true;
+  }
+  return false;
+}
+function sliceComma(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].indexOf(",") !== -1) {
+      const index = array[i].indexOf(",");
+      array[i] = array[i].split("").splice(0, index).join("");
     }
   }
 }
