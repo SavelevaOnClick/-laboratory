@@ -257,3 +257,4 @@ function getSumPositiveNumbers(arrayOfNumbers) {
   }
   return sum;
 }
+// task 9
