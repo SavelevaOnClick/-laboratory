@@ -73,7 +73,6 @@ function task3(sentence) {
       counter++;
     }
   }
-  console.log(counter);
 }
 
 function checking(element, arrayOfElements) {
@@ -161,3 +160,43 @@ function getFibonacciSeries(n) {
   }
   return arrayFibonacci;
 }
+// task 6
+function getAreaRectangle(a, b) {
+  const area = a * b;
+  return area;
+}
+
+function getAreaTriangle(a, b, c) {
+  if (!(a + b > c && a + c > b && b + c > a)) return false;
+  const semiPerimeter = (a + b + c) / 2;
+  const area =
+    (semiPerimeter *
+      (semiPerimeter - a) *
+      (semiPerimeter - b) *
+      (semiPerimeter - c)) **
+    (1 / 2);
+  return area;
+}
+
+function getAreaCircle(radius) {
+  const pi = 3.14;
+  const area = pi * radius ** 2;
+  return area;
+}
+
+function getPerimeterRectangle(a, b) {
+  const perimeter = (a + b) * 2;
+  return perimeter;
+}
+
+function getPerimeterTriangle(a, b, c) {
+  const perimeter = a + b + c;
+  return perimeter;
+}
+
+function getPerimeterCircle(radius) {
+  const pi = 3.14;
+  const perimeter = 2 * pi * radius;
+  return perimeter;
+}
+// task 7
