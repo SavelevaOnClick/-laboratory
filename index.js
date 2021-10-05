@@ -209,3 +209,51 @@ function getFactorial(number) {
   return factorial;
 }
 // task8
+function isArrayOfNumber(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] !== "number") return false;
+  }
+  return true;
+}
+function getSumEvenNumber(arrayOfNumbers) {
+  if (!isArrayOfNumber(arrayOfNumbers)) return false;
+  let sum = 0;
+  for (let i = 0; i < arrayOfNumbers.length; i++) {
+    if (arrayOfNumbers[i] % 2 === 0) {
+      sum += arrayOfNumbers[i];
+    }
+  }
+  return sum;
+}
+
+function getSumOddNumber(arrayOfNumbers) {
+  if (!isArrayOfNumber(arrayOfNumbers)) return false;
+  let sum = 0;
+  for (let i = 0; i < arrayOfNumbers.length; i++) {
+    if (arrayOfNumbers[i] % 2 !== 0) {
+      sum += arrayOfNumbers[i];
+    }
+  }
+  return sum;
+}
+function getSumMultiplesOfThree(arrayOfNumbers) {
+  if (!isArrayOfNumber(arrayOfNumbers)) return false;
+  let sum = 0;
+  for (let i = 0; i < arrayOfNumbers.length; i++) {
+    if (arrayOfNumbers[i] % 3 === 0) {
+      sum += arrayOfNumbers[i];
+    }
+  }
+  return sum;
+}
+
+function getSumPositiveNumbers(arrayOfNumbers) {
+  if (!isArrayOfNumber(arrayOfNumbers)) return false;
+  let sum = 0;
+  for (let i = 0; i < arrayOfNumbers.length; i++) {
+    if (arrayOfNumbers[i] > 0) {
+      sum += arrayOfNumbers[i];
+    }
+  }
+  return sum;
+}
