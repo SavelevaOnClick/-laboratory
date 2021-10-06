@@ -545,3 +545,21 @@ function getMatrixAddition(matrix1, matrix2) {
   }
   return matrixResult;
 }
+
+// task 16
+function m(matrix) {
+  let counter = 0;
+  let length = matrix.length;
+  for (let i = 0; i < length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === 0) {
+        counter++;
+      }
+    }
+    if (counter > 0) {
+      matrix.splice(i, 1);
+      length -= 1;
+    }
+  }
+  return matrix;
+}
