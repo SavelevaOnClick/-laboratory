@@ -366,3 +366,4 @@ function getPositiveNumbersInMatrix(matrix) {
   }
   return sum;
 }
+// task12
