@@ -1,66 +1,66 @@
-function task1(strouk1, strouk2) {
-  if (strouk1.length !== strouk2.length) return false;
-  for (let i = 0; i < strouk1.length; i++) {
-    if (
-      checkingLetter(strouk1[i], strouk1) !==
-      checkingLetter(strouk1[i], strouk2)
-    )
-      return false;
-  }
-  return true;
-}
-function checkingLetter(letter, strouk) {
-  let counter = 0;
-  for (let i = 0; i < strouk.length; i++) {
-    if (strouk[i] === letter) {
-      counter++;
-    }
-  }
-  return counter;
-}
+// function task1(strouk1, strouk2) {
+//   if (strouk1.length !== strouk2.length) return false;
+//   for (let i = 0; i < strouk1.length; i++) {
+//     if (
+//       checkingLetter(strouk1[i], strouk1) !==
+//       checkingLetter(strouk1[i], strouk2)
+//     )
+//       return false;
+//   }
+//   return true;
+// }
+// function checkingLetter(letter, strouk) {
+//   let counter = 0;
+//   for (let i = 0; i < strouk.length; i++) {
+//     if (strouk[i] === letter) {
+//       counter++;
+//     }
+//   }
+//   return counter;
+// }
 
 // second
 
-function secondTask(number) {
-  const resultObject = {};
-  const stringNumber = String(number);
-  const arrayOfUniqueNumbers = sortingUniqueArray(stringNumber);
-  for (let i = 0; i < arrayOfUniqueNumbers.length; i++) {
-    Object.assign(resultObject, {
-      [arrayOfUniqueNumbers[i]]: getCounter(
-        arrayOfUniqueNumbers[i],
-        stringNumber
-      ),
-    });
-  }
-  return resultObject;
-}
-
-function getCounter(numb, stringNumber) {
-  let counter = 0;
-  for (let i = 0; i < stringNumber.length; i++)
-    if (numb === stringNumber[i]) {
-      counter++;
-    }
-  return counter;
-}
-
-function checkingElement(element, array) {
-  if (array.length === 0) return false;
-  for (let i = 0; i < array.length; i++) {
-    if (element === array[i]) return true;
-  }
-  return false;
-}
-function sortingUniqueArray(number) {
-  const arrayOfUniqueValues = [];
-  for (let i = 0; i < number.length; i++) {
-    if (!checkingElement(number[i], arrayOfUniqueValues)) {
-      arrayOfUniqueValues.push(number[i]);
-    }
-  }
-  return arrayOfUniqueValues;
-}
+// function secondTask(number) {
+//   const resultObject = {};
+//   const stringNumber = String(number);
+//   const arrayOfUniqueNumbers = sortingUniqueArray(stringNumber);
+//   for (let i = 0; i < arrayOfUniqueNumbers.length; i++) {
+//     Object.assign(resultObject, {
+//       [arrayOfUniqueNumbers[i]]: getCounter(
+//         arrayOfUniqueNumbers[i],
+//         stringNumber
+//       ),
+//     });
+//   }
+//   return resultObject;
+// }
+//
+// function getCounter(numb, stringNumber) {
+//   let counter = 0;
+//   for (let i = 0; i < stringNumber.length; i++)
+//     if (numb === stringNumber[i]) {
+//       counter++;
+//     }
+//   return counter;
+// }
+//
+// function checkingElement(element, array) {
+//   if (array.length === 0) return false;
+//   for (let i = 0; i < array.length; i++) {
+//     if (element === array[i]) return true;
+//   }
+//   return false;
+// }
+// function sortingUniqueArray(number) {
+//   const arrayOfUniqueValues = [];
+//   for (let i = 0; i < number.length; i++) {
+//     if (!checkingElement(number[i], arrayOfUniqueValues)) {
+//       arrayOfUniqueValues.push(number[i]);
+//     }
+//   }
+//   return arrayOfUniqueValues;
+// }
 
 // task 3
 
