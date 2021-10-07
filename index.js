@@ -563,3 +563,20 @@ function m(matrix) {
   }
   return matrix;
 }
+
+function m2(matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    let length = matrix[i].length;
+    for (let j = 0; j < length; j++) {
+      if (matrix[i][j] === 0) {
+        let item = j;
+        for (let i = 0; i < matrix.length; i++) {
+          matrix[i].splice(item, 1);
+        }
+        length--;
+      }
+    }
+  }
+  return matrix;
+}
+// task 17
