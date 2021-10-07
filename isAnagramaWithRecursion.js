@@ -1,29 +1,23 @@
 function isAnagramWidthRecursion(word1, word2, index) {
-  if (word1.length !== word2.length) {
-    return false;
-  }
   index = index || 0;
-  while (index < word1.length) {
-    if (
-      getAmounOfLetter(word1[index], word1) !==
-      getAmounOfLetter(word1[index], word2)
-    ) {
-      return false;
-    } else {
-      isAnagramWidthRecursion(word1, word2, ++index);
-    }
+  let boolean =
+    getAmounOfLetter(word1[index], word1) ===
+      getAmounOfLetter(word1[index], word2) || false;
+
+  if (++index < word1.length && boolean) {
+    boolean = isAnagramWidthRecursion(word1, word2, index);
   }
 
-  return true;
+  return boolean;
 }
 
-function getAmounOfLetter(letter, string, length) {
+function getAmounOfLetter(letter, string, index) {
+  index = index || 0;
   let counter = 0;
-  length = length || 0;
-  string[length] === letter && counter++;
+  letter === string[index] && counter++;
 
-  if (++length < string.length) {
-    counter += getAmounOfLetter(letter, string, length);
+  if (++index < string.length) {
+    counter += getAmounOfLetter(letter, string, index);
   }
 
   return counter;
