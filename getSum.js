@@ -1,3 +1,11 @@
+function getSumAllNumber(array) {
+  let sum = 0;
+  for (let number of array) {
+    sum += number;
+  }
+  return sum;
+}
+
 function getSumEvenNumber(arrayOfNumbers) {
   let sum = 0;
   for (let number of arrayOfNumbers) {
