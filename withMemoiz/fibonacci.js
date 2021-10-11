@@ -5,11 +5,11 @@ function createMemoiz() {
     function getFibonacciNumber(number) {
       let result = 0;
       if (memo[number]) {
-        console.log("from cash", number);
+        console.log("кеш", number);
         result = memo[number];
         return result;
       }
-      console.log("calc", number);
+      console.log("считаем", number);
 
       if (number <= 1) {
         memo[number] = number;
