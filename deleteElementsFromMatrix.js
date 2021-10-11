@@ -1,7 +1,6 @@
 function deleteStringOfMatrix(matrix) {
   let counter = 0;
-  let length = matrix.length;
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
       if (matrix[i][j] === 0) {
         counter++;
@@ -9,7 +8,7 @@ function deleteStringOfMatrix(matrix) {
     }
     if (counter > 0) {
       matrix.splice(i, 1);
-      length -= 1;
+      counter = 0;
     }
   }
   return matrix;
@@ -17,14 +16,12 @@ function deleteStringOfMatrix(matrix) {
 
 function deleteColumnOfMatrix(matrix) {
   for (let i = 0; i < matrix.length; i++) {
-    let length = matrix[i].length;
-    for (let j = 0; j < length; j++) {
+    for (let j = 0; j < matrix[i].length; j++) {
       if (matrix[i][j] === 0) {
         let item = j;
         for (let i = 0; i < matrix.length; i++) {
           matrix[i].splice(item, 1);
         }
-        length--;
       }
     }
   }
