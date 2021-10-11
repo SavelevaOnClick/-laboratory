@@ -17,20 +17,15 @@ function getMeanValueInMatrix(matrix, index1, index2) {
     : sum;
 }
 
-function getMeanValueEvenNumbersInMatrix(
-  matrix,
-  index1,
-  index2,
-  positiveCounter
-) {
+function getMeanValueEvenNumbersInMatrix(matrix, index1, index2, evenCounter) {
   let sum = 0;
-  positiveCounter = positiveCounter || 0;
+  evenCounter = evenCounter || 0;
   index1 = index1 || 0;
   index2 = index2 || 0;
 
   if (matrix[index1][index2] % 2 === 0) {
     sum = matrix[index1][index2];
-    positiveCounter++;
+    evenCounter++;
   }
 
   if (++index2 < matrix[index1].length) {
@@ -38,40 +33,35 @@ function getMeanValueEvenNumbersInMatrix(
       matrix,
       index1,
       index2,
-      positiveCounter
+      evenCounter
     );
     sum += result.sum;
-    positiveCounter = result.positiveCounter;
+    evenCounter = result.evenCounter;
   } else if (++index1 < matrix.length) {
     index2 = 0;
     let result = getMeanValueEvenNumbersInMatrix(
       matrix,
       index1,
       index2,
-      positiveCounter
+      evenCounter
     );
     sum += result.sum;
-    positiveCounter = result.positiveCounter;
+    evenCounter = result.evenCounter;
   }
   return index1 === 0 && index2 === 1
-    ? sum / positiveCounter
-    : { sum, positiveCounter };
+    ? sum / evenCounter
+    : { sum, evenCounter };
 }
 
-function getMeanValueOddNumbersInMatrix(
-  matrix,
-  index1,
-  index2,
-  negativeCounter
-) {
+function getMeanValueOddNumbersInMatrix(matrix, index1, index2, oddCounter) {
   let sum = 0;
-  negativeCounter = negativeCounter || 0;
+  oddCounter = oddCounter || 0;
   index1 = index1 || 0;
   index2 = index2 || 0;
 
   if (matrix[index1][index2] % 2 !== 0) {
     sum = matrix[index1][index2];
-    negativeCounter++;
+    oddCounter++;
   }
 
   if (++index2 < matrix[index1].length) {
@@ -79,22 +69,20 @@ function getMeanValueOddNumbersInMatrix(
       matrix,
       index1,
       index2,
-      negativeCounter
+      oddCounter
     );
     sum += result.sum;
-    negativeCounter = result.negativeCounter;
+    oddCounter = result.oddCounter;
   } else if (++index1 < matrix.length) {
     index2 = 0;
     let result = getMeanValueOddNumbersInMatrix(
       matrix,
       index1,
       index2,
-      negativeCounter
+      oddCounter
     );
     sum += result.sum;
-    negativeCounter = result.negativeCounter;
+    oddCounter = result.oddCounter;
   }
-  return index1 === 0 && index2 === 1
-    ? sum / negativeCounter
-    : { sum, negativeCounter };
+  return index1 === 0 && index2 === 1 ? sum / oddCounter : { sum, oddCounter };
 }
