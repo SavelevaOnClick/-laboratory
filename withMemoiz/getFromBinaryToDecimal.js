@@ -1,7 +1,7 @@
 function creationOfMemorization() {
   const memo = {};
   return function getFromBinaryToDecimal(number, arrayNumber, counter, index) {
-    if (memo[number]) {
+    if (memo[number] !== undefined) {
       console.log("get from cash");
       return memo[number];
     }

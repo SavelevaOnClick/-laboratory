@@ -1,7 +1,7 @@
 function creationOfMemorization() {
   let memo = {};
   return function getMeanValueOfArray(array, index) {
-    if (memo[array]) {
+    if (memo[array] !== undefined) {
       console.log("cash");
       return memo[array];
     }
@@ -23,7 +23,7 @@ function creationOfMemorization() {
 function creationOfMemorization() {
   let memo = {};
   return function getMeanOfTheEvenNumbersOfArray(array, index, counter) {
-    if (memo[array]) {
+    if (memo[array] !== undefined) {
       console.log("cash");
       return memo[array];
     }
@@ -51,7 +51,7 @@ function creationOfMemorization() {
 function creationOfMemorization() {
   let memo = {};
   return function getMeanOfTheOddNumbersOfArray(array, index, counter) {
-    if (memo[array]) {
+    if (memo[array] !== undefined) {
       console.log("cash");
       return memo[array];
     }

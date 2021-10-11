@@ -2,7 +2,7 @@ function factorial() {
   const memo = {};
   return function factorial(number) {
     let resultFact;
-    if (memo[number]) {
+    if (memo[number] !== undefined) {
       resultFactorial = memo[number];
       console.log("из кеша");
     } else {

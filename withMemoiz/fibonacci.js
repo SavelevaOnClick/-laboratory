@@ -4,7 +4,7 @@ function createMemoiz() {
     arrayFibonacci = arrayFibonacci || [];
     function getFibonacciNumber(number) {
       let result = 0;
-      if (memo[number]) {
+      if (memo[number] !== undefined) {
         console.log("кеш", number);
         result = memo[number];
         return result;

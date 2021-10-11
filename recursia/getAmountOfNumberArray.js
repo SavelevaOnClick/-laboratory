@@ -1,46 +1,46 @@
-function getAmountNegativeElementsWithRecursia(array, index) {
+function getAmountNegativeElements(array, index) {
   let counter = 0;
   index = index || 0;
   array[index] < 0 && counter++;
 
   if (++index < array.length) {
-    counter += getAmountNegativeElementsWithRecursia(array, index);
+    counter += getAmountNegativeElements(array, index);
   }
 
   return counter;
 }
 
-function getAmountZeroElementsWithRecursia(array, index) {
+function getAmountZeroElements(array, index) {
   let counter = 0;
   index = index || 0;
   array[index] === 0 && counter++;
 
   if (++index < array.length) {
-    counter += getAmountZeroElementsWithRecursia(array, index);
+    counter += getAmountZeroElements(array, index);
   }
 
   return counter;
 }
 
-function getAmountPositiveElementsWithRecursia(array, index) {
+function getAmountPositiveElements(array, index) {
   let counter = 0;
   index = index || 0;
   array[index] > 0 && counter++;
 
   if (++index < array.length) {
-    counter += getAmountPositiveElementsWithRecursia(array, index);
+    counter += getAmountPositiveElements(array, index);
   }
 
   return counter;
 }
 
-function getAmountPrimeElementsWithRecursia(array, index) {
+function getAmountPrimeElements(array, index) {
   let counter = 0;
   index = index || 0;
   isPrimeNumber(array[index]) && counter++;
 
   if (++index < array.length) {
-    counter += getAmountPrimeElementsWithRecursia(array, index);
+    counter += getAmountPrimeElements(array, index);
   }
   return counter;
 }

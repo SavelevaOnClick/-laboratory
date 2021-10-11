@@ -1,7 +1,7 @@
 function creationOfMemorization() {
   const memo = {};
   return function getSumAllNumber(array, index) {
-    if (memo[array]) {
+    if (memo[array] !== undefined) {
       return memo[array];
     }
     index = index || 0;
@@ -19,7 +19,7 @@ function creationOfMemorization() {
 function creationOfMemorization() {
   let memo = {};
   return function getSumEvenNumber(array, index) {
-    if (memo[array]) {
+    if (memo[array] !== undefined) {
       console.log("cash");
       return memo[array];
     }
@@ -42,7 +42,7 @@ function creationOfMemorization() {
 function creationOfMemorization() {
   let memo = {};
   return function getSumOddNumber(array, index) {
-    if (memo[array]) {
+    if (memo[array] !== undefined) {
       console.log("cash");
       return memo[array];
     }
@@ -65,7 +65,7 @@ function creationOfMemorization() {
 function creationOfMemorization() {
   let memo = {};
   return function getSumMultiplesOfThree(array, index) {
-    if (memo[array]) {
+    if (memo[array] !== undefined) {
       console.log("cash");
       return memo[array];
     }
@@ -88,7 +88,7 @@ function creationOfMemorization() {
 function creationOfMemorization() {
   let memo = {};
   return function getSumPositiveNumbers(array, index) {
-    if (memo[array]) {
+    if (memo[array] !== undefined) {
       console.log("cash");
       return memo[array];
     }
