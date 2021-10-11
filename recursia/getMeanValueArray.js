@@ -11,40 +11,38 @@ function getMeanValueOfArray(array, index) {
   return result;
 }
 
-function getMeanOfTheEvenNumbersOfArray(array, index, arrayOffEven) {
-  let result = 0;
-  arrayOffEven = arrayOffEven || [];
+function getMeanOfTheEvenNumbersOfArray(array, index, counter) {
+  let sum = 0;
+  counter = counter || 0;
   index = index || 0;
 
-  if (index < array.length) {
-    if (array[index] % 2 === 0) {
-      result = array[index];
-      arrayOffEven.push(array[index]);
-    }
-    index++;
-    result += getMeanOfTheEvenNumbersOfArray(array, index, arrayOffEven);
-    if (index === 1) {
-      result = result / arrayOffEven.length;
-    }
+  if (array[index] % 2 === 0) {
+    sum = array[index];
+    counter++;
   }
-  return result;
+
+  if (++index < array.length) {
+    let result = getMeanOfTheEvenNumbersOfArray(array, index, counter);
+    sum += result.sum;
+    counter = result.counter;
+  }
+  return index === 1 ? sum / counter : { sum, counter };
 }
 
-function getMeanOfTheOddNumbersOfArray(array, index, arrayOffOdd) {
-  let result = 0;
-  arrayOffOdd = arrayOffOdd || [];
+function getMeanOfTheOddNumbersOfArray(array, index, counter) {
+  let sum = 0;
+  counter = counter || 0;
   index = index || 0;
 
-  if (index < array.length) {
-    if (array[index] % 2 !== 0) {
-      result = array[index];
-      arrayOffOdd.push(array[index]);
-    }
-    index++;
-    result += getMeanOfTheOddNumbersOfArray(array, index, arrayOffOdd);
-    if (index === 1) {
-      result = result / arrayOffOdd.length;
-    }
+  if (array[index] % 2 !== 0) {
+    sum = array[index];
+    counter++;
   }
-  return result;
+
+  if (++index < array.length) {
+    let result = getMeanOfTheOddNumbersOfArray(array, index, counter);
+    sum += result.sum;
+    counter = result.counter;
+  }
+  return index === 1 ? sum / counter : { sum, counter };
 }
