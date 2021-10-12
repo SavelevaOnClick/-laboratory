@@ -1,8 +1,8 @@
 Function.prototype.myCall = function (objectContext, ...args) {
   const func = this;
-  let property = Date.now().toLocaleString();
-  objectContext[property] = func;
-  const result = objectContext[property](...args);
-  delete objectContext[property];
+  let id = Symbol("id");
+  objectContext[id] = func;
+  const result = objectContext[id](...args);
+  delete objectContext[id];
   return result;
 };
