@@ -1,4 +1,4 @@
-function getAmountOfNumbersWithRecursia(
+function getAmountOfNumbers(
   number,
   resultObject,
   index,
@@ -19,7 +19,7 @@ function getAmountOfNumbersWithRecursia(
   });
 
   ++index < arrayOfUniqueNumbers.length &&
-    getAmountOfNumbersWithRecursia(
+    getAmountOfNumbers(
       number,
       resultObject,
       index,

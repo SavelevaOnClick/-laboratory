@@ -4,6 +4,7 @@ function creationOfMemorization() {
     if (memo[array] !== undefined) {
       return memo[array];
     }
+
     index = index || 0;
     let sum = array[index];
 
@@ -11,7 +12,6 @@ function creationOfMemorization() {
       sum += getSumAllNumber(array, index);
     }
     memo[array] = sum;
-    console.log(memo);
     return sum;
   };
 }
@@ -20,10 +20,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getSumEvenNumber(array, index) {
     if (memo[array] !== undefined) {
-      console.log("cash");
       return memo[array];
     }
-    console.log("calc");
+
     index = index || 0;
     let sum = 0;
 
@@ -34,6 +33,7 @@ function creationOfMemorization() {
     if (++index < array.length) {
       sum += getSumEvenNumber(array, index);
     }
+
     memo[array] = sum;
     return sum;
   };
@@ -43,10 +43,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getSumOddNumber(array, index) {
     if (memo[array] !== undefined) {
-      console.log("cash");
       return memo[array];
     }
-    console.log("calc");
+
     index = index || 0;
     let sum = 0;
 
@@ -57,6 +56,7 @@ function creationOfMemorization() {
     if (++index < array.length) {
       sum += getSumOddNumber(array, index);
     }
+
     memo[array] = sum;
     return sum;
   };
@@ -66,10 +66,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getSumMultiplesOfThree(array, index) {
     if (memo[array] !== undefined) {
-      console.log("cash");
       return memo[array];
     }
-    console.log("calc");
+
     index = index || 0;
     let sum = 0;
 
@@ -80,6 +79,7 @@ function creationOfMemorization() {
     if (++index < array.length) {
       sum += getSumMultiplesOfThree(array, index);
     }
+
     memo[array] = sum;
     return sum;
   };
@@ -89,10 +89,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getSumPositiveNumbers(array, index) {
     if (memo[array] !== undefined) {
-      console.log("cash");
       return memo[array];
     }
-    console.log("calc");
+
     index = index || 0;
     let sum = 0;
 
@@ -103,6 +102,7 @@ function creationOfMemorization() {
     if (++index < array.length) {
       sum += getSumPositiveNumbers(array, index);
     }
+
     memo[array] = sum;
     return sum;
   };

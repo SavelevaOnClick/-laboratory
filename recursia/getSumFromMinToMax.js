@@ -1,14 +1,14 @@
-function getMinToMaxSumWithRecursia(min, max) {
+function getMinToMaxSum(min, max) {
   let sum = min;
 
   if (++min <= max) {
-    sum += getMinToMaxSumWithRecursia(min, max);
+    sum += getMinToMaxSum(min, max);
   }
 
   return sum;
 }
 
-function getMinToMaxSumOfMultiplesOfThreeWithRecursia(min, max) {
+function getMinToMaxSumOfMultiplesOfThree(min, max) {
   let sum = 0;
 
   if (min % 3 === 0) {
@@ -16,13 +16,13 @@ function getMinToMaxSumOfMultiplesOfThreeWithRecursia(min, max) {
   }
 
   if (++min <= max) {
-    sum += getMinToMaxSumOfMultiplesOfThreeWithRecursia(min, max);
+    sum += getMinToMaxSumOfMultiplesOfThree(min, max);
   }
 
   return sum;
 }
 
-function getMinToMaxSumOfPositiveNumberWithRecursia(min, max) {
+function getMinToMaxSumOfPositiveNumber(min, max) {
   let sum = 0;
 
   if (min > 0) {
@@ -30,7 +30,7 @@ function getMinToMaxSumOfPositiveNumberWithRecursia(min, max) {
   }
 
   if (++min <= max) {
-    sum += getMinToMaxSumOfPositiveNumberWithRecursia(min, max);
+    sum += getMinToMaxSumOfPositiveNumber(min, max);
   }
 
   return sum;

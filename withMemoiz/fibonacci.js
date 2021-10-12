@@ -4,12 +4,11 @@ function createMemoiz() {
     arrayFibonacci = arrayFibonacci || [];
     function getFibonacciNumber(number) {
       let result = 0;
+
       if (memo[number] !== undefined) {
-        console.log("кеш", number);
         result = memo[number];
         return result;
       }
-      console.log("считаем", number);
 
       if (number <= 1) {
         memo[number] = number;
@@ -22,10 +21,12 @@ function createMemoiz() {
       }
       return result;
     }
+
     if (--number >= 0) {
       arrayFibonacci.unshift(getFibonacciNumber(number));
       pushFibonacci(number, arrayFibonacci);
     }
+
     return arrayFibonacci;
   };
 }

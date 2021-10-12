@@ -2,10 +2,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getAmountNegativeElements(array, index) {
     if (memo[array] !== undefined) {
-      console.log("cash");
       return memo[array];
     }
-    console.log("calc");
+
     let counter = 0;
     index = index || 0;
     array[index] < 0 && counter++;
@@ -22,10 +21,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getAmountZeroElements(array, index) {
     if (memo[array] !== undefined) {
-      console.log("cash");
       return memo[array];
     }
-    console.log("calc");
+
     let counter = 0;
     index = index || 0;
     array[index] === 0 && counter++;
@@ -42,10 +40,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getAmountPositiveElements(array, index) {
     if (memo[array] !== undefined) {
-      console.log("cash");
       return memo[array];
     }
-    console.log("calc");
+
     let counter = 0;
     index = index || 0;
     array[index] > 0 && counter++;
@@ -62,10 +59,9 @@ const isPrimeNumber = (function creationOfMemorization() {
   let memo = {};
   return function isPrime(number, index) {
     if (memo[number] !== undefined) {
-      console.log("cash");
       return memo[number];
     }
-    console.log("calc");
+
     if (number <= 1 || !number) {
       return false;
     }
@@ -90,10 +86,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getAmountPrimeElements(array, index) {
     if (memo[array] !== undefined) {
-      console.log("cash");
       return memo[array];
     }
-    console.log("calc");
+
     let counter = 0;
     index = index || 0;
     isPrimeNumber(array[index]) && counter++;

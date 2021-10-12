@@ -2,10 +2,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getSumNumbersInMatrix(matrix, index1, index2) {
     if (memo[matrix] !== undefined) {
-      console.log("cash");
       return memo[matrix];
     }
-    console.log("calc");
+
     let sum = 0;
     index1 = index1 || 0;
     index2 = index2 || 0;
@@ -18,6 +17,7 @@ function creationOfMemorization() {
       index2 = 0;
       sum += getSumNumbersInMatrix(matrix, index1, index2);
     }
+
     memo[matrix] = sum;
     return sum;
   };
@@ -27,10 +27,9 @@ function creationOfMemorization() {
   let memo = {};
   return function getSumEvenNumbersInMatrix(matrix, index1, index2) {
     if (memo[matrix] !== undefined) {
-      console.log("cash");
       return memo[matrix];
     }
-    console.log("calc");
+
     let sum = 0;
     index1 = index1 || 0;
     index2 = index2 || 0;
@@ -45,6 +44,7 @@ function creationOfMemorization() {
       index2 = 0;
       sum += getSumEvenNumbersInMatrix(matrix, index1, index2);
     }
+
     memo[matrix] = sum;
     return sum;
   };

@@ -1,4 +1,4 @@
-function getNumberOfUniqueWordsWithRecursia(sentence, index, arraySentences) {
+function getNumberOfUniqueWords(sentence, index, arraySentences) {
   const arrayOfSentences =
     arraySentences || cleaningSentences(sentence).split(" ");
   index = index || 0;
@@ -7,11 +7,7 @@ function getNumberOfUniqueWordsWithRecursia(sentence, index, arraySentences) {
     counter++;
 
   if (++index < arrayOfSentences.length) {
-    counter += getNumberOfUniqueWordsWithRecursia(
-      sentence,
-      index,
-      arrayOfSentences
-    );
+    counter += getNumberOfUniqueWords(sentence, index, arrayOfSentences);
   }
 
   return counter;

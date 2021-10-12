@@ -2,10 +2,9 @@ function creationOfMemorization() {
   const memo = {};
   return function getFromBinaryToDecimal(number, arrayNumber, counter, index) {
     if (memo[number] !== undefined) {
-      console.log("get from cash");
       return memo[number];
     }
-    console.log("get calc");
+
     let sum = 0;
     let numberToThePowerOf2 = 0;
     arrayNumber = arrayNumber || String(number).split("");
@@ -17,6 +16,7 @@ function creationOfMemorization() {
     if (++index < arrayNumber.length) {
       sum += getFromBinaryToDecimal(number, arrayNumber, counter, index);
     }
+
     memo[number] = sum;
     return sum;
   };

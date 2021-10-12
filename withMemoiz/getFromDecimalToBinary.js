@@ -2,11 +2,11 @@ function creationOfMemorization() {
   const memo = {};
   return function getFromDecimalToBinary(number, array, variable) {
     variable = variable || number;
+
     if (memo[number] !== undefined) {
-      console.log("from cash");
       return memo[number];
     }
-    console.log("calculator");
+
     array = array || [];
     array.unshift(variable % 2);
     variable = Math.floor(variable / 2);
@@ -16,6 +16,7 @@ function creationOfMemorization() {
     } else {
       array.unshift(variable);
     }
+
     memo[number] = Number(array.join(""));
     return Number(array.join(""));
   };
