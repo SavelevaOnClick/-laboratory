@@ -5,6 +5,9 @@ let rectangle = {
   set setHeight(height) {
     this.setHeight = height;
   },
+  get square() {
+    return this.width * this.height;
+  },
   get area() {
     return this.width * this.height;
   },
